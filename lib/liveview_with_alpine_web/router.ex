@@ -18,6 +18,7 @@ defmodule LiveviewWithAlpineWeb.Router do
     pipe_through :browser
 
     live "/demo", Dropdown
+    live "/example", ExampleLive
     get "/", PageController, :index
   end
 

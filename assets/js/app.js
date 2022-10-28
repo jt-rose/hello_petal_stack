@@ -27,9 +27,24 @@ import "phoenix_html";
 import { Socket } from "phoenix";
 import { LiveSocket } from "phoenix_live_view";
 import topbar from "../vendor/topbar";
-
+Alpine.data("my_name", () => ({
+  uppercase: true,
+  className: "text-green-500",
+  name: "Jeff",
+  toggle() {
+    this.uppercase = !this.uppercase;
+    if (this.uppercase) {
+      this.name = this.name.toUpperCase();
+      this.className = "text-purple-500";
+    } else {
+      this.name = this.name.toLowerCase();
+      this.className = "text-purple-500";
+    }
+  },
+}));
 window.Alpine = Alpine;
 Alpine.start();
+
 let hooks = {};
 let csrfToken = document
   .querySelector("meta[name='csrf-token']")
