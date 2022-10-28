@@ -30,7 +30,16 @@ defmodule LiveviewWithAlpineWeb.ExampleLive do
         Name: <%= @name%>
         </h1>
         <br />
-        <h1 x-data="my_name" x-bind:class="className" @click="toggle">Name2: <span x-text="name"/> </h1>
+
+
+        <h1
+          x-data="my_name"
+          x-bind:class="className"
+          @click="toggle"
+          >
+            Name2:
+            <span x-text="name"/>
+          </h1>
     """
   end
 end
